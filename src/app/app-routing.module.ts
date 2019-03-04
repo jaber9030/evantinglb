@@ -6,9 +6,11 @@ const routes: Routes = [
   { path: 'home', loadChildren: './home/home.module#HomePageModule' },
   { path: 'sports', loadChildren: './sports/sports.module#SportsPageModule' },
   { path: 'fashion', loadChildren: './fashion/fashion.module#FashionPageModule' },
-  { path: 'exhibitions-conferences', loadChildren: './exhibitions-conferences/exhibitions-conferences.module#ExhibitionsConferencesPageModule' },
+  { path: 'exhibitions-conferences', loadChildren: './exhibitions-conferences/' +
+  'exhibitions-conferences.module#ExhibitionsConferencesPageModule' },
   { path: 'nightlife', loadChildren: './nightlife/nightlife.module#NightlifePageModule' },
-  { path: 'contact', loadChildren: './contact/contact.module#ContactPageModule' }
+  { path: 'contact', loadChildren: './contact/contact.module#ContactPageModule' },
+  { path: 'init', loadChildren: './init/init.module#InitPageModule' }
 ];
 @NgModule({
   imports: [
