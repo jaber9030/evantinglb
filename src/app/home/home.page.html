@@ -5,9 +5,34 @@
 </ion-header>
 
 <ion-content padding>
-  <ion-slides [slidesPerView]="5">
-    <ion-slide *ngFor="let post in latestPosts">
-      <img src="{{post.}}" alt="">
+
+  <h1>Latest</h1>
+  <ion-spinner *ngIf="loading"></ion-spinner>
+  <ion-slides pager="true" [options]="sliderConfig">
+    <ion-slide *ngFor="let post of latestPosts">
+      <ion-card>
+          <ion-card-content>
+              <img src="{{post.image}}">
+              {{post.post_title}}
+            <ion-button expand="full">View</ion-button>
+          </ion-card-content>
+  
+      </ion-card>
+    </ion-slide>
+  </ion-slides>
+
+  <h1>Trending</h1>
+  <ion-spinner *ngIf="loading"></ion-spinner>
+  <ion-slides pager="true" [options]="sliderConfig">
+    <ion-slide *ngFor="let post of trendingPosts">
+      <ion-card>
+          <ion-card-content>
+              <img src="{{post.image}}">
+              {{post.post_title}}
+            <ion-button expand="full">View</ion-button>
+          </ion-card-content>
+  
+      </ion-card>
     </ion-slide>
   </ion-slides>
 </ion-content>

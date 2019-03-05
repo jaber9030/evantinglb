@@ -19,9 +19,14 @@ export class RestService {
 
 
   public getLatestPosts(): Observable<PostModel[]> {
-    this.action = 'posts ';
-    this.params = '?order=desc&limit=10&categories=309';
+    this.action = 'latest-posts/';
+    this.params = '309';
     return this.client.get<PostModel[]>(this.baseUrl + this.action + this.params);
+  }
+
+  public getTrendingPosts(): Observable<PostModel[]> {
+    this.action = 'trending-posts';
+    return this.client.get<PostModel[]>(this.baseUrl + this.action);
   }
 
 }
